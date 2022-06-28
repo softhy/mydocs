@@ -369,16 +369,16 @@ EOF
 如图所示
 ![](./img/crd-monitor.png)
 当然你也可以通过命令行进行查询验证。
-# 三、验证数据采集并配置grafana
-## 3.1查看系统普罗米修斯地址并查询数据
-### 3.1.1我们可以在集群中的如下地址找到ks系统集成的普罗米修斯服务，如图所示
+## 三、验证数据采集并配置grafana
+### 3.1查看系统普罗米修斯地址并查询数据
+#### 3.1.1我们可以在集群中的如下地址找到ks系统集成的普罗米修斯服务，如图所示
 ![](./img/plmxs_service.jpg)
 ### 3.1.2 访问普罗米修斯web界面
 通过3.1.1我们可以看到普罗米修斯服务的ip地址为172.17.107.29  默认端口为9090  我们在浏览器输入 http://172.17.107.29:9090 
 可以看到如图所示
 ![](./img/plmxs_web.png)
-## 3.2 在kubeshare中配置自定义监控及告警
- ### 3.2.1 自定义监控
+### 3.2 在kubeshare中配置自定义监控及告警
+ #### 3.2.1 自定义监控
  我们可以访问-集群->监控告警->自定义监控进入
  如图所示
 ![](./img/custom-monitoring.png)
@@ -388,12 +388,11 @@ EOF
 
 导入后我们就可以看到相关监控指标了
 ![](./img/grafana_jvm.png)
-### 3.2.2 自定义告警
+#### 3.2.2 自定义告警
 我们也可以使用系统集成的告警策略设置基于采集数据的自定义告警设置
 如![](./img/alert-rules.png)
-
-## 3.3 使用外置的grafana
-### 3.3.1 安装grafana
+### 3.3 使用外置的grafana
+#### 3.3.1 安装grafana
  1、配置应用仓库
  为了快速的安装helm应用 我们可以依次打开企业空间-应用管理-应用仓库
  在点击右边的添加按钮这里 我们添加的是bitmap的应用仓库地址 https://charts.bitnami.com/bitnami
@@ -402,13 +401,13 @@ EOF
 我们依次打开企业空间-项目-点击要安装到的具体项目-点击应用-点击右侧的创建按钮
 弹出对话框中点击从应用模版，从应用仓库列表中选择我们刚刚添加的bitnami的仓库 搜索grafana 点击后安装即可
 ![](./img/install-grafana.png)
-### 3.3.2 配置grafana 数据源
+#### 3.3.2 配置grafana 数据源
 我们使用管理员账号登录进grafana  默认密码可以在项目的保密字典中的grafana-admin中找到
 登录后我们点击左侧的小齿轮-datasource 在打开页面中选择Add data source然后选择Prometheus 在 url中填入我们上面说到的普罗米修斯的url地址 如图所示
 ![](/img/g_add_prometheus.png)
 
 填写后拖到最下面，点击save&test 
-### 3.3.3 导入dashbord 
+#### 3.3.3 导入dashbord 
 我们点击页面左侧➕-import
 输入我们从[grafana官网](https://grafana.com/grafana/dashboards)获得的对应的模版的id 点击load 
 在下一步中选择prometheus 为我们配置的数据源 点击import即可
