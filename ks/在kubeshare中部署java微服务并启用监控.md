@@ -24,7 +24,7 @@ management.server.port=8090
 * management.server.port 启用独立的端口来提供监控，避免监控相关api暴露在服务外
 * management.metrics.tags.xxx 在统计信息中添加自定义的标签
 * management.endpoints.web.exposure.include 用于包含我们要公开的端点列表,我们这里设置为* 代表所有
-### 1.2.1 观察应用程序监控数据
+#### 1.2.1 观察应用程序监控数据
 当我们运行编写好的程序后，通过访问 
 http://localhost:8090/api/actuator/prometheus
 可以看到类似如下数据，其中就有我们通过配置添加的tag数据
@@ -373,7 +373,7 @@ EOF
 ### 3.1查看系统普罗米修斯地址并查询数据
 #### 3.1.1我们可以在集群中的如下地址找到ks系统集成的普罗米修斯服务，如图所示
 ![](./img/plmxs_service.jpg)
-### 3.1.2 访问普罗米修斯web界面
+#### 3.1.2 访问普罗米修斯web界面
 通过3.1.1我们可以看到普罗米修斯服务的ip地址为172.17.107.29  默认端口为9090  我们在浏览器输入 http://172.17.107.29:9090 
 可以看到如图所示
 ![](./img/plmxs_web.png)
